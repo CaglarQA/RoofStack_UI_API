@@ -98,10 +98,7 @@ public class sendCVStepDef {
     }
 
     @When("enter full name {string} , emailAdress {string} , and phone number {string}")
-    public void enter_full_name_email_adress_and_phone_number(String name, String mail, String phone) {
-      //  ConfigurationReader.getProperty(name);
-      //  ConfigurationReader.getProperty(mail);
-      //  ConfigurationReader.getProperty(phone);
+    public void enter_full_name_email_adress_and_phone_number(String name, String mail, String phone) throws InterruptedException {
 
         applicationPage.userName.sendKeys(ConfigurationReader.getProperty(name));
 
@@ -112,18 +109,18 @@ public class sendCVStepDef {
     }
 
     @When("upload a sample CV")
-    public void upload_a_sample_cv() {
+    public void upload_a_sample_cv() throws InterruptedException {
+
         applicationPage.sendCv.sendKeys("C:\\Users\\cagla\\OneDrive\\Masaüstü\\caglarCV.docx");
 
     }
 
     @When("click send button")
-    public void click_send_button() {
+    public void click_send_button() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0,750)", "");
-        System.out.println("44");
         applicationPage.sendButton.click();
-        System.out.println("45");
+
 
     }
 
