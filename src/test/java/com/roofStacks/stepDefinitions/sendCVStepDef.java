@@ -27,13 +27,13 @@ public class sendCVStepDef {
         System.out.println("first");
         Driver.getDriver().get("https://www.google.com/");
        // googleSearchBoxPage.popUp.click();
+        System.out.println("popup code is commented");
         System.out.println("2");
     }
 
     @When("enter {string} into search box and hit the enter")
     public void enter_into_search_box_and_hit_the_enter(String text) {
 
-        Driver.getDriver().navigate().refresh();
         googleSearchBoxPage.searchBox.sendKeys(text, Keys.ENTER);
         System.out.println("3");
 
@@ -105,7 +105,7 @@ public class sendCVStepDef {
     @When("click {string} button")
     public void click_button(String string) {
         seniorMobileDeveloperPage.applyButton.click();
-
+        System.out.println("10");
     }
 
     @When("enter full name {string} , emailAdress {string} , and phone number {string}")
@@ -118,14 +118,16 @@ public class sendCVStepDef {
         applicationPage.email.sendKeys(ConfigurationReader.getProperty(mail));
 
         applicationPage.phoneNumber.sendKeys(ConfigurationReader.getProperty(phone));
+        System.out.println("11");
 
     }
 
     @When("upload a sample CV")
     public void upload_a_sample_cv() throws InterruptedException {
 
-        applicationPage.sendCv.sendKeys("C:\\Users\\cagla\\OneDrive\\Masaüstü\\caglarCV.docx");
-
+//        applicationPage.sendCv.sendKeys("C:\\Users\\cagla\\OneDrive\\Masaüstü\\caglarCV.docx");
+        System.out.println("upload cv cancelled");
+        System.out.println("12");
     }
 
     @When("click send button")
@@ -133,6 +135,7 @@ public class sendCVStepDef {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0,750)", "");
         applicationPage.sendButton.click();
+        System.out.println("13");
 
 
     }
@@ -143,6 +146,8 @@ public class sendCVStepDef {
 //        System.out.println("applicationPage.allDone.getText() = " + applicationPage.allDone.getText());
 //
 //        Assert.assertEquals(expectedText,applicationPage.allDone.getText());
+
+        System.out.println("Mission completed succesfully");
 
     }
 
