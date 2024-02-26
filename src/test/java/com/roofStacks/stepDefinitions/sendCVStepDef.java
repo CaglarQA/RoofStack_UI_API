@@ -26,7 +26,7 @@ public class sendCVStepDef {
     public void go_to_google_home_page() {
         System.out.println("first");
         Driver.getDriver().get("https://www.google.com/");
-        googleSearchBoxPage.popUp.click();
+       // googleSearchBoxPage.popUp.click();
         System.out.println("2");
     }
 
