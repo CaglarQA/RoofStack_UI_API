@@ -32,6 +32,8 @@ public class sendCVStepDef {
 
     @When("enter {string} into search box and hit the enter")
     public void enter_into_search_box_and_hit_the_enter(String text) {
+
+        Driver.getDriver().navigate().refresh();
         googleSearchBoxPage.searchBox.sendKeys(text, Keys.ENTER);
         System.out.println("3");
 
