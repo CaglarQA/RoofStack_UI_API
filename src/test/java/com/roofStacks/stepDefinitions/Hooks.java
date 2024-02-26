@@ -11,11 +11,12 @@ public class Hooks {
 
     @Before
     public void before(){
-
+        System.out.println("1");
     }
 
     @After
     public void teardownScenario(Scenario scenario) {
+        System.out.println("last");
 
         //scenario.isFailed() --> if scenario fails this method will return TRUE boolean value
 

@@ -24,13 +24,16 @@ public class sendCVStepDef {
 
     @Given("go to google home page")
     public void go_to_google_home_page() {
+        System.out.println("first");
         Driver.getDriver().get("https://www.google.com/");
         googleSearchBoxPage.popUp.click();
+        System.out.println("2");
     }
 
     @When("enter {string} into search box and hit the enter")
     public void enter_into_search_box_and_hit_the_enter(String text) {
         googleSearchBoxPage.searchBox.sendKeys(text, Keys.ENTER);
+        System.out.println("3");
 
     }
 
@@ -42,6 +45,7 @@ public class sendCVStepDef {
                 break;
             }
         }
+        System.out.println("4");
 
     }
 
@@ -53,6 +57,7 @@ public class sendCVStepDef {
                 break;
             }
         }
+        System.out.println(5);
 
     }
 
@@ -61,6 +66,7 @@ public class sendCVStepDef {
 
         careerPage = new CareerPage();
         careerPage.clickOpenPositions(link);
+        System.out.println("6");
 
     }
 
@@ -73,6 +79,7 @@ public class sendCVStepDef {
             }
 
         }
+        System.out.println("7");
     }
 
     @When("click View job near {string} title")
@@ -83,12 +90,13 @@ public class sendCVStepDef {
                 break;
             }
         }
-
+        System.out.println("8");
     }
 
     @Then("the title of page should contain {string}")
     public void the_title_of_page_should_contain(String title) {
         Assert.assertEquals(Driver.getDriver().getTitle(), title);
+        System.out.println("9");
 
     }
 
