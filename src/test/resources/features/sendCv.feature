@@ -1,6 +1,6 @@
 Feature: Sending CV on Career page
 
-  @a
+  @wip
   Scenario: Send Cv
 
     Given go to google home page
@@ -15,5 +15,5 @@ Feature: Sending CV on Career page
     And enter full name "fullName" , emailAdress "emailAdress" , and phone number "phoneNumber"
     And upload a sample CV
     And click send button
-    Then "All done" message should be displayed
+    Then "All done!" message should be displayed
 

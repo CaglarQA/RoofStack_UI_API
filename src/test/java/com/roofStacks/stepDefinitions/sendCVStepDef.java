@@ -2,6 +2,7 @@ package com.roofStacks.stepDefinitions;
 
 import com.github.dockerjava.api.model.Link;
 import com.roofStacks.pages.*;
+import com.roofStacks.utility.BrowserUtils;
 import com.roofStacks.utility.ConfigurationReader;
 import com.roofStacks.utility.Driver;
 import io.cucumber.java.en.Given;
@@ -99,10 +100,12 @@ public class sendCVStepDef {
 
     @When("enter full name {string} , emailAdress {string} , and phone number {string}")
     public void enter_full_name_email_adress_and_phone_number(String name, String mail, String phone) throws InterruptedException {
+//        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+//        js.executeScript("window.scrollBy(0,350)", "");
 
         applicationPage.userName.sendKeys(ConfigurationReader.getProperty(name));
 
-        applicationPage.password.sendKeys(ConfigurationReader.getProperty(mail));
+        applicationPage.email.sendKeys(ConfigurationReader.getProperty(mail));
 
         applicationPage.phoneNumber.sendKeys(ConfigurationReader.getProperty(phone));
 
@@ -125,7 +128,11 @@ public class sendCVStepDef {
     }
 
     @Then("{string} message should be displayed")
-    public void message_should_be_displayed(String string) {
+    public void message_should_be_displayed(String expectedText) {
+//        BrowserUtils.sleep(2);
+//        System.out.println("applicationPage.allDone.getText() = " + applicationPage.allDone.getText());
+//
+//        Assert.assertEquals(expectedText,applicationPage.allDone.getText());
 
     }
 

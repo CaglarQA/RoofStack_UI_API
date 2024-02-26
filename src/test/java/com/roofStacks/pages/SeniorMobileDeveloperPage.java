@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class SeniorMobileDeveloperPage extends BasePage{
-    @FindBy(id = "tabs--17--tab--1")
+    @FindBy(id = "tabs--18--tab--1")
     public WebElement applyButton;
 
 }
